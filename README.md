@@ -7,4 +7,9 @@
 
 
 01 MNIST手写数字
+   
 <http://mp.weixin.qq.com/s/Ipyu8uZN_WMXzOAYE162ug>
+   
+<http://mp.weixin.qq.com/s/MZLViUfKdeaFi1Xxc69_SQ>
+
+<http://mp.weixin.qq.com/s/cVDArkpH6hBGtOOuNWgOYg>
