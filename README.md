@@ -19,7 +19,13 @@
 
 [1.5补充 图像处理的内容，缩放图片，居中处理](http://mp.weixin.qq.com/s/u-VBRkjfMPrQ6XfM1aFs9w)
 
+代码见mnist文件夹。
 
-## 02 FashionMNIST
+## 02 HelloPython练习本
+2.1 numpy的练习
 
-更换训练数据集
+代码见HelloPython文件夹。
+
+## 03 FashionMNIST
+
+更换训练数据集，待更新
