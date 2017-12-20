@@ -5,6 +5,7 @@
 
 >> 首发于微信公众号Design-AI-Lab
 
+![Alt text](http://1.gravatar.com/avatar/d71b61e9f32693f0ef25ad33c387b464?s=68&d=monsterid&r=g)
 
 ## 01 MNIST手写数字
    
