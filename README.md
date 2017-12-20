@@ -3,9 +3,7 @@
 
 ### 用keras训练模型到后端的服务器接口部署，前端web页面的开发，移动端app开发。
 
->> 首发于微信公众号Design-AI-Lab
-
-![Alt text](http://1.gravatar.com/avatar/d71b61e9f32693f0ef25ad33c387b464?s=68&d=monsterid&r=g)
+>> 首发于![微信公众号Design-AI-Lab](https://mmbiz.qpic.cn/mmbiz_png/pMDHibpHlCGaANvNXEE6bhHI83Mdb3uyicicqIQwibe09hWfs7dbyl4aGRCSia9Dj9l0TPDdMOyRZsBIVLFB8mWiaDXg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
 
 ## 01 MNIST手写数字
    
