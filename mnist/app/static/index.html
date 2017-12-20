@@ -1,13 +1,38 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <form action="./predict" method="post" enctype="multipart/form-data">
-       upload: <input type="file" name="predictImg">
-        <input type="submit" name="upload">
-    </form>
-  </body>
+<!doctype html>
+<html lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <title>mnist demo</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="./static/css/main.css">
+</head>
+
+<body onselectstart="return false">
+
+  <div id="mnist-pad">
+
+    <div class="mnist-pad-body">
+      <canvas></canvas>
+    </div>
+
+    <div class="mnist-pad-footer">
+      <div class="mnist-pad-result">
+        <h5>识别结果:</h5>
+        <h5 id="mnist-pad-result"></h5>
+      </div>
+
+      <div class="mnist-pad-actions">
+        <button type="button" id="mnist-pad-clear">清除</button>
+        <button type="button" id="mnist-pad-save">识别</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="./static/js/signature_pad.js"></script>
+  <script src="./static/js/mnist.js"></script>
+  <script src="./static/js/app.js"></script>
+</body>
+
 </html>
