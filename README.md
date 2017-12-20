@@ -18,3 +18,8 @@
 [1.4介绍前端web单页应用的开发](http://mp.weixin.qq.com/s/-WUTmflwMwDzgj2FAChsAA)
 
 [1.5补充 图像处理的内容，缩放图片，居中处理](http://mp.weixin.qq.com/s/u-VBRkjfMPrQ6XfM1aFs9w)
+
+
+## 02 FashionMNIST
+
+更换训练数据集
