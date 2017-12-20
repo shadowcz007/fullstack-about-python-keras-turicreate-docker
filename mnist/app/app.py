@@ -7,24 +7,33 @@ app = Flask(__name__)
 import predict 
 import os
 
+import time
+
 app.config['UPLOAD_FOLDER'] = 'tmp'
 
 @app.route('/')
 def hello_world():
     return app.send_static_file('index.html')
 
+@app.route('/index1')
+def test():
+    return app.send_static_file('index1.html')
+
+
 @app.route('/predict', methods=['POST'])
 def predictFromImg():
     if request.method == 'POST':
         
         predictImg = request.files['predictImg']
+        
+        filename=str(int(time.mktime(time.localtime())))+'.png'
+         
+        predictImg.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
  
-        predictImg.save(os.path.join(app.config['UPLOAD_FOLDER'], predictImg.filename))
- 
-        imgurl='./tmp/'+predictImg.filename
+        imgurl='./tmp/'+filename
         result=predict.img2class(imgurl)
         print(result)
-        return '<h1>HELLO~~~: %s</h1>' % result
+        return str(result)
         
 
 if __name__ == '__main__':
