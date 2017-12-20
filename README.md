@@ -8,12 +8,12 @@
 
 ## 01 MNIST手写数字
    
-[111](http://mp.weixin.qq.com/s/Ipyu8uZN_WMXzOAYE162ug)
+[1.1介绍开发环境--训练模型--保存至本地](http://mp.weixin.qq.com/s/Ipyu8uZN_WMXzOAYE162ug)
    
-<http://mp.weixin.qq.com/s/MZLViUfKdeaFi1Xxc69_SQ>
+[1.2](http://mp.weixin.qq.com/s/MZLViUfKdeaFi1Xxc69_SQ)
 
-<http://mp.weixin.qq.com/s/cVDArkpH6hBGtOOuNWgOYg>
+[1.3](http://mp.weixin.qq.com/s/cVDArkpH6hBGtOOuNWgOYg)
 
-<http://mp.weixin.qq.com/s/-WUTmflwMwDzgj2FAChsAA>
+[1.4](http://mp.weixin.qq.com/s/-WUTmflwMwDzgj2FAChsAA)
 
-<http://mp.weixin.qq.com/s/u-VBRkjfMPrQ6XfM1aFs9w>
+[1.5](http://mp.weixin.qq.com/s/u-VBRkjfMPrQ6XfM1aFs9w)
