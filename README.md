@@ -27,6 +27,14 @@
 
 代码见[HelloPython](/HelloPython/)文件夹。
 
+2.2 词云的练习
+
+代码见[wordCloud_poster](/HelloPython/)文件夹。
+
+2.3 蒙特卡洛解决三门问题的练习
+
+代码见[MonteCarlo](/HelloPython/)文件夹。
+
 ## 03 FashionMNIST
 
 更换训练数据集，待更新
