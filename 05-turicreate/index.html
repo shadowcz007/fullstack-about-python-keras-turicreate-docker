@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="./js/jquery-1.5.1.min.js" charset="utf-8"></script>
+  <script src="./js/echarts.min.js" charset="utf-8"></script>
+  <script src="./js/data.js" charset="utf-8"></script>
+  <style media="screen">
+    .img100{
+      width: 200px;
+      height: auto;
+      margin: 24px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text" name="" value="" id="dataName">
+  <input type="text" name="" value="" id="fileList">
+  <button type="button" name="button" id="start">Start</button>
+  <div id="main" style="width:100%;height:100vh;"></div>
+
+  <script type="text/javascript">
+    var _mainDiv = document.getElementById('main');
+
+
+    var myChart = echarts.init(_mainDiv);
+    myChart.showLoading();
+    var data = [],
+      edges = [],
+      index = 0;
+    var option = {
+      series: [{
+        type: 'graph',
+        layout: 'force',
+        animation: false,
+        data: data,
+        force: {
+          // initLayout: 'circular'
+          // gravity: 0
+          repulsion: 100,
+          edgeLength: 10
+        },
+        edges: edges
+      }]
+    };
+    myChart.setOption(option);
+
+if(false){
+  $.getJSON("./js/output.json", function(avatarSim) {
+    console.log(avatarSim)
+    window.avatarSim = avatarSim;
+    //getSimbyOne(index);
+
+    for (var i = 0; i < avatarSim.length*0.002; i++) {
+
+      var _a = avatarSim[i].X1;
+
+      var _p1Src = 'image://' + './data/userAvatar/' + _a[1].replace('.jpg', '.jpeg'),
+        _p2Src = 'image://' + './data/userAvatar/' + _a[2].replace('.jpg', '.jpeg'),
+        _dis = _a[0],
+        _p1Name, _p2Name;
+
+      users.forEach((u, j) => {
+        if (u.id == _a[1].replace(/\..*/ig, '')) {
+          _p1Name = u.name
+        }
+
+        if (u.id == _a[2].replace(/\..*/ig, '')) {
+          _p2Name = u.name
+        }
+
+      });
+
+
+      var _is1Has = false,
+        _is2Has = false;
+
+      data.forEach((d, i) => {
+        if (d.id == _a[1]) {
+          _is1Has = true;
+        };
+        if (d.id == _a[2]) {
+          _is2Has = true;
+        };
+      });
+
+      if (!_is1Has) {
+        data.push({
+          id: _a[1],
+          name: _p1Name,
+          symbol: _p1Src
+        });
+      };
+      if (!_is2Has) {
+        data.push({
+          id: _a[2],
+          name: _p2Name,
+          symbol: _p2Src
+        });
+      };
+
+      var source = _a[1];
+      var target = _a[2];
+
+      if (source !== target) {
+        console.log(source)
+        edges.push({
+          source: source,
+          target: target,
+          value: _dis,
+          lineStyle:{
+            width:0.2
+          }
+        });
+      };
+
+    };
+
+    console.log('done')
+
+          myChart.setOption({
+            series: [{
+              roam: true,
+              data: data,
+              edges: edges
+            }]
+          });
+          myChart.hideLoading();
+    /*
+          window._t = setInterval(function() {
+            getSimbyOne(index);
+          }, 500);
+          window.clearInterval(window._t);
+    */
+
+  });
+}
+
+
+
+
+
+
+    function getSimbyOne(_index) {
+      console.log(avatarSim)
+      var _a = avatarSim[_index].X1;
+
+      var _p1Src = 'image://' + './data/userAvatar/' + _a[1].replace('.jpg', '.jpeg'),
+        _p2Src = 'image://' + './data/userAvatar/' + _a[2].replace('.jpg', '.jpeg'),
+        _dis = _a[0],
+        _p1Name, _p2Name;
+
+      users.forEach((u, j) => {
+        if (u.id == _a[1].replace(/\..*/ig, '')) {
+          _p1Name = u.name
+        }
+
+        if (u.id == _a[2].replace(/\..*/ig, '')) {
+          _p2Name = u.name
+        }
+
+      });
+
+
+      var _is1Has = false,
+        _is2Has = false;
+
+      data.forEach((d, i) => {
+        if (d.id == _a[1]) {
+          _is1Has = true;
+        };
+        if (d.id == _a[2]) {
+          _is2Has = true;
+        };
+      });
+
+      if (!_is1Has) {
+        data.push({
+          id: _a[1],
+          name: _p1Name,
+          symbol: _p1Src
+        });
+      };
+      if (!_is2Has) {
+        data.push({
+          id: _a[2],
+          name: _p2Name,
+          symbol: _p2Src
+        });
+      };
+
+      var source = _a[1];
+      var target = _a[2];
+
+      if (source !== target) {
+        console.log(source, target)
+        edges.push({
+          source: source,
+          target: target,
+          value: _dis
+        });
+      };
+
+      myChart.setOption({
+        series: [{
+          roam: true,
+          data: data,
+          edges: edges
+        }]
+      });
+
+
+      index = _index + 1;
+
+    };
+
+
+
+    function getSim() {
+      avatarSim.forEach((a, i) => {
+        var img1 = document.createElement('img'),
+          img2 = document.createElement('img'),
+          p = document.createElement('p'),
+          div = document.createElement('div');
+
+        img1.src = './data/userAvatar/' + a[1];
+        img2.src = './data/userAvatar/' + a[2];
+        p.innerText = a[0];
+        users.forEach((u, j) => {
+          if (u.id == a[1].replace(/\..*/ig, '')) {
+            img1.title = u.name
+          }
+
+          if (u.id == a[2].replace(/\..*/ig, '')) {
+            img2.title = u.name
+          }
+
+        });
+
+        div.appendChild(p);
+        div.appendChild(img1);
+        div.appendChild(img2);
+
+        if (a[0] < 18) {
+
+          document.body.appendChild(div);
+        };
+      });
+    };
+
+
+    function getKNN(_fileList,dataName,end) {
+      _fileList.forEach((p, i) => {
+        img = document.createElement('img');
+        img.className="img100";
+        img.src = './data/'+dataName+'/' + p.replace('/root/kerasStudy/05-turicreate-notebooks/data/'+dataName+'/ok/', '').replace('.jpg', '.'+end);
+
+        document.body.appendChild(img)
+      })
+    };
+
+    document.querySelector('#start').addEventListener('click',function(){
+      myChart.hideLoading();
+      document.querySelector('#main')&&document.querySelector('#main').remove();
+
+      var _name=document.querySelector('#dataName').value||localStorage.getItem('_name');
+
+      var _fileList=document.querySelector('#fileList').value||localStorage.getItem('_fileList');
+
+document.querySelector('#dataName').value=_name;
+document.querySelector('#fileList').value=_fileList;
+
+localStorage.setItem('_name',_name);
+localStorage.setItem('_fileList',_fileList);
+
+      _fileList=_fileList.replace(/\'|\s|\[|\]/ig,'').split(',');
+
+      console.log(_fileList)
+      getKNN(_fileList,_name,'jpg');
+    });
+
+
+  </script>
+</body>
+
+</html>
